@@ -8,6 +8,7 @@ $lotrMovies = include '../configuration/lotrmovieapi.php';
 
 $movies = json_decode($lotrMovies, true);
 
+/*
 $movieDetails = [];
 
 foreach ($movies as $movie){
@@ -15,6 +16,8 @@ foreach ($movies as $movie){
     'name' => $movie['name']
     ];
 }
+*/
+die(var_dump($movies));
 ?>
 
 <?php
