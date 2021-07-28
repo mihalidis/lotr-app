@@ -9,6 +9,8 @@ Learning PHP via https://kommunity.com/potterhead project
 
 * You must have PHP 7.3 installed on your computer. If you are using windows like me, https://www.wampserver.com/en/ is useful
 
+* For Lord of the rings api key https://the-one-api.dev/
+
 ### Executing program
 
 ```
