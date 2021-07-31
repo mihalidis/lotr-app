@@ -11,19 +11,20 @@ $title = 'Lord Of The Rings';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
+                <!-- BUG: When I click on the "/index.php" link while on the "pages/movies.php" link, it tries to get the extension as "pages/index.php" -->
                 <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/index.php'){echo 'active';}; ?>" href="index.php">Main</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/movies.php'){echo 'active';}; ?>"" href="./movies.php">Movies</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/movies.php'){echo 'active';}; ?>"" href="pages/movies.php">Movies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/books.php'){echo 'active';}; ?>"" href="./books.php">Books</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/books.php'){echo 'active';}; ?>"" href="pages/books.php">Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/characters.php'){echo 'active';}; ?>"" href="./characters.php">Characters</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/characters.php'){echo 'active';}; ?>"" href="pages/characters.php">Characters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/quotes.php'){echo 'active';}; ?>"" href="./quotes.php">Quotes</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/quotes.php'){echo 'active';}; ?>"" href="pages/quotes.php">Quotes</a>
             </li>
         </ul>
     </div>

@@ -8,16 +8,24 @@ $lotrMovies = include '../configuration/lotrmovieapi.php';
 
 $movies = json_decode($lotrMovies, true);
 
-/*
 $movieDetails = [];
 
-foreach ($movies as $movie){
+foreach ($movies["docs"] as $movie){
     $movieDetails[] = [
-    'name' => $movie['name']
+        'name' => $movie['name'],
+        'budgetInMillions' => (string) $movie['budgetInMillions'],
+        'academyAwardNominations' => (string) $movie['academyAwardNominations'],
+        'academyAwardWins' => (string) $movie['academyAwardWins'],
+        'rottenTomatoesScore' => (string) $movie['rottenTomatoesScore'],
     ];
 }
+
+/*
+$deneme = $movies["docs"][0]['budgetInMillions'];
+$cevir = (string) $deneme;
+die(var_dump($cevir));
 */
-die(var_dump($movies));
+
 ?>
 
 <?php
@@ -33,6 +41,10 @@ include 'layout/navbar.php';
     <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
+        <th scope="col">Budget</th>
+        <th scope="col">Academy Award Nominations</th>
+        <th scope="col">Academy Award Wins</th>
+        <th scope="col">Rotten Tomatoes Score</th>
     </tr>
     </thead>
 
@@ -45,6 +57,10 @@ include 'layout/navbar.php';
             <tr>
                 <th scope="row"><?php echo $counter++; ?></th>
                 <td><?php echo $detail['name']?></td>
+                <td><?php echo $detail['budgetInMillions']?> Million</td>
+                <td><?php echo $detail['academyAwardNominations']?></td>
+                <td><?php echo $detail['academyAwardWins']?></td>
+                <td><?php echo $detail['rottenTomatoesScore']?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
