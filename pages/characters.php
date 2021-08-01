@@ -14,11 +14,10 @@ foreach ($characters["docs"] as $character){
     $characterDetails[] = [
         'name' => $character['name'],
         'race' => $character['race'],
-        'gender' => $character['gender'],
         'realm' => $character['realm'],
     ];
 }
-// ISSUE: Some data comes with undefined index, solve that!
+
 ?>
 
 <?php
