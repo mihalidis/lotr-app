@@ -1,21 +1,23 @@
 <?php
+$lotrCharacters = include '../configuration/lotrcharacterapi.php';
+include '../classes/character.php';
 
 function getTitle() {
     return 'Characters';
 }
-
-$lotrCharacters = include '../configuration/lotrcharacterapi.php';
 
 $characters = json_decode($lotrCharacters, true);
 
 $characterDetails = [];
 
 foreach ($characters["docs"] as $character){
-    $characterDetails[] = [
-        'name' => $character['name'],
-        'race' => $character['race'],
-        'realm' => $character['realm'],
-    ];
+    $characterNew = new Character();
+
+    $characterNew->name = $character['name'];
+    $characterNew->race = $character['race'];
+    $characterNew->realm = $character['realm'];
+
+    $characterDetails[] = $characterNew;
 }
 
 ?>
@@ -46,9 +48,9 @@ include 'layout/navbar.php';
         ?>
         <tr>
             <th scope="row"><?php echo $counter++; ?></th>
-            <td><?php echo $detail['name']?></td>
-            <td><?php echo $detail['race']?></td>
-            <td><?php echo $detail['realm']?></td>
+            <td><?php echo $detail->name ?></td>
+            <td><?php echo $detail->race ?></td>
+            <td><?php echo $detail->realm ?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
