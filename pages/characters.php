@@ -13,11 +13,14 @@ $characterDetails = [];
 foreach ($characters["docs"] as $character){
     $characterNew = new Character();
 
-    $characterNew->name = $character['name'];
-    $characterNew->race = $character['race'];
-    $characterNew->realm = $character['realm'];
+    $characterNew->setName($character['name']);
+    $characterNew->setRace($character['race']);
+    $characterNew->setRealm($character['realm']);
 
-    $characterDetails[] = $characterNew;
+    if($characterNew->getRace() != '' || $characterNew->getRace() != NULL) {
+        $characterDetails[] = $characterNew;
+    }
+
 }
 
 ?>
@@ -48,9 +51,9 @@ include 'layout/navbar.php';
         ?>
         <tr>
             <th scope="row"><?php echo $counter++; ?></th>
-            <td><?php echo $detail->name ?></td>
-            <td><?php echo $detail->race ?></td>
-            <td><?php echo $detail->realm ?></td>
+            <td><?php echo $detail->getName() ?></td>
+            <td><?php echo $detail->getRace() ?></td>
+            <td><?php echo $detail->getRealm() ?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
