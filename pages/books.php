@@ -1,19 +1,20 @@
 <?php
+$lotrBooks = include '../configuration/lotrbookapi.php';
+include '../classes/book.php';
 
 function getTitle() {
     return 'Books';
 }
-
-$lotrBooks = include '../configuration/lotrbookapi.php';
 
 $books = json_decode($lotrBooks, true);
 
 $bookDetails = [];
 
 foreach ($books["docs"] as $book){
-    $bookDetails[] = [
-        'name' => $book['name'],
-    ];
+    $bookNew = new Book();
+    $bookNew->setName($book['name']);
+
+    $bookDetails[] = $bookNew;
 }
 ?>
 
@@ -41,7 +42,7 @@ include 'layout/navbar.php';
         ?>
         <tr>
             <th scope="row"><?php echo $counter++; ?></th>
-            <td><?php echo $detail['name']?></td>
+            <td><?php echo $detail->getName()?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>

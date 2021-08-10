@@ -1,30 +1,26 @@
 <?php
+$lotrMovies = include '../configuration/lotrmovieapi.php';
+include '../classes/movie.php';
 
 function getTitle() {
     return 'Movies';
 }
-
-$lotrMovies = include '../configuration/lotrmovieapi.php';
 
 $movies = json_decode($lotrMovies, true);
 
 $movieDetails = [];
 
 foreach ($movies["docs"] as $movie){
-    $movieDetails[] = [
-        'name' => $movie['name'],
-        'budgetInMillions' => (string) $movie['budgetInMillions'],
-        'academyAwardNominations' => (string) $movie['academyAwardNominations'],
-        'academyAwardWins' => (string) $movie['academyAwardWins'],
-        'rottenTomatoesScore' => (string) $movie['rottenTomatoesScore'],
-    ];
-}
+    $movieNew = new Movie();
 
-/*
-$deneme = $movies["docs"][0]['budgetInMillions'];
-$cevir = (string) $deneme;
-die(var_dump($cevir));
-*/
+    $movieNew->setName($movie['name']);
+    $movieNew->setBudgetInMillions((string) $movie['budgetInMillions']);
+    $movieNew->setAcademyAwardNominations((string) $movie['academyAwardNominations']);
+    $movieNew->setAcademyAwardWins((string) $movie['academyAwardWins']);
+    $movieNew->setRottenTomatoesScore((string) $movie['rottenTomatoesScore']);
+
+    $movieDetails[] = $movieNew;
+}
 
 ?>
 
@@ -56,11 +52,11 @@ include 'layout/navbar.php';
             ?>
             <tr>
                 <th scope="row"><?php echo $counter++; ?></th>
-                <td><?php echo $detail['name']?></td>
-                <td><?php echo $detail['budgetInMillions']?> Million</td>
-                <td><?php echo $detail['academyAwardNominations']?></td>
-                <td><?php echo $detail['academyAwardWins']?></td>
-                <td><?php echo $detail['rottenTomatoesScore']?></td>
+                <td><?php echo $detail->getName()?></td>
+                <td><?php echo $detail->getBudgetInMillions()?> Million</td>
+                <td><?php echo $detail->getAcademyAwardNominations()?></td>
+                <td><?php echo $detail->getAcademyAwardWins()?></td>
+                <td><?php echo $detail->getRottenTomatoesScore()?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
