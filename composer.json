@@ -1,5 +1,18 @@
 {
-    "require": {
+    "name": "pinar/lord-of-the-rings-app",
+    "autoload": {
+        "psr-4": {
+            "Pinar\\LordOfTheRingsApp\\": "src/"
+        },
+        "classmap": ["src/classes"]
+    },
+    "authors": [
+        {
+            "name": "Pınar",
+            "email": "pinarsuvac@gmail.com"
+        }
+    ],
+    "require-dev": {
         "phpunit/phpunit": "^9.5"
     }
 }

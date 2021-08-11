@@ -16,6 +16,11 @@ Learning PHP via https://kommunity.com/potterhead project
 ```
 php -S localhost:3000
 ```
+## Notes for phpunit
+if your 'phpunit' command won't work, try to give alias to phpunit
+```
+alias phpunit='./vendor/bin/phpunit'
+```
 
 ## License
 
