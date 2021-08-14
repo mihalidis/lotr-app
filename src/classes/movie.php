@@ -1,5 +1,5 @@
 <?php
-
+include "budgetException.php";
 class movie
 {
     private $name;
@@ -22,7 +22,12 @@ class movie
     }
     public function setBudgetInMillions($budgetInMillions)
     {
-        $this->budgetInMillions = $budgetInMillions;
+        if(is_numeric($budgetInMillions)) {
+            $this->budgetInMillions = $budgetInMillions;
+        } else {
+            throw new budgetException("Budget has to be numeric");
+        }
+
     }
 
     public function getAcademyAwardNominations()

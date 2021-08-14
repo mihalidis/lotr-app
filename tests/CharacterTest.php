@@ -11,7 +11,7 @@ class CharacterTest extends TestCase
         parent::setUp();
         $this->character = new Character();
     }
-    // TODO: FAILED TEST :(
+    // TODO: FIX THE FAILED TEST :(
     public function testSetRace()
     {
         $value = $this->character->setRace("Hobbit");

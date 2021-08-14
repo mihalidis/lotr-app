@@ -14,16 +14,16 @@ $title = 'Lord Of The Rings';
                 <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/index.php'){echo 'active';}; ?>" href="/index.php">Main</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/movies.php'){echo 'active';}; ?>"" href="/pages/movies.php">Movies</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/src/pages/movies.php'){echo 'active';}; ?>"" href="/src/pages/movies.php">Movies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/books.php'){echo 'active';}; ?>"" href="/pages/books.php">Books</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/src/pages/books.php'){echo 'active';}; ?>"" href="/src/pages/books.php">Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/characters.php'){echo 'active';}; ?>"" href="/pages/characters.php">Characters</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/src/pages/characters.php'){echo 'active';}; ?>"" href="/src/pages/characters.php">Characters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/pages/quotes.php'){echo 'active';}; ?>"" href="/pages/quotes.php">Quotes</a>
+                <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/src/pages/quotes.php'){echo 'active';}; ?>"" href="/src/pages/quotes.php">Quotes</a>
             </li>
         </ul>
     </div>
