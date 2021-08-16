@@ -6,11 +6,9 @@ function getTitle() {
     return 'Characters';
 }
 
-$characters = json_decode($lotrCharacters, true);
-
 $characterDetails = [];
 
-foreach ($characters["docs"] as $character){
+foreach ($lotrCharacters["docs"] as $character){
     $characterNew = new Character();
 
     $characterNew->setName($character['name']);

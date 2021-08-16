@@ -1,5 +1,7 @@
 <?php
+
 $title = 'Lord Of The Rings';
+
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -8,7 +10,7 @@ $title = 'Lord Of The Rings';
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/index.php'){echo 'active';}; ?>" href="/index.php">Main</a>
@@ -26,5 +28,8 @@ $title = 'Lord Of The Rings';
                 <a class="nav-link <?php if($_SERVER['REQUEST_URI'] == '/src/pages/quotes.php'){echo 'active';}; ?>"" href="/src/pages/quotes.php">Quotes</a>
             </li>
         </ul>
+        <div>
+            <a class="btn btn-outline-success my-2 my-sm-0" type="button" href="/src/pages/register.php"> Register </a>
+        </div>
     </div>
 </nav>

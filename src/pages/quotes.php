@@ -4,23 +4,19 @@ include '../classes/quote.php';
 function getTitle() {
     return 'Quotes';
 }
-// Todo: API'S can come with class system , examine https://github.com/Potterhead/app/pull/19/files
+
 $lotrMovies = include '../configuration/lotrmovieapi.php';
 $lotrCharacters = include '../configuration/lotrcharacterapi.php';
 $lotrQuotes = include '../configuration/lotrquoteapi.php';
 
-$quotes = json_decode($lotrQuotes, true);
-$movies = json_decode($lotrMovies, true);
-$characters = json_decode($lotrCharacters, true);
-
 $quoteDetails = [];
 
-foreach ($quotes["docs"] as $quote){
+foreach ($lotrQuotes["docs"] as $quote){
 
     $quoteNew = new Quote();
 
-    $quoteNew->setMovie($quote['movie'], $movies);
-    $quoteNew->setCharacter($quote['character'], $characters);
+    $quoteNew->setMovie($quote['movie'], $lotrMovies);
+    $quoteNew->setCharacter($quote['character'], $lotrCharacters);
     $quoteNew->setDialog($quote['dialog']);
 
     $quoteDetails[] = $quoteNew;

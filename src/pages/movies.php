@@ -6,11 +6,9 @@ function getTitle() {
     return 'Movies';
 }
 
-$movies = json_decode($lotrMovies, true);
-
 $movieDetails = [];
 
-foreach ($movies["docs"] as $movie){
+foreach ($lotrMovies["docs"] as $movie){
     $movieNew = new Movie();
 
     $movieNew->setName($movie['name']);
