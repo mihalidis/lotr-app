@@ -1,10 +1,20 @@
 <?php
+include '../classes/profile.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
     die("Form can't submitted");
 }
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $formInformations = [];
+    $newProfile = new profile();
 
-$formInformation = $_POST;
+    $newProfile->setEmail($_POST['email']);
+    $newProfile->setPassword($_POST['password']);
+    $newProfile->setName($_POST['name']);
+    $newProfile->setRace($_POST['race']);
+
+    $formInformations[] = $newProfile;
+}
 
 function getTitle() {
     return 'Profile';
@@ -24,8 +34,11 @@ include 'layout/navbar.php';
         <div>
             <ul class="list-group">
                 <li class="list-group-item">Profile Information</li>
-            <?php foreach ($formInformation as $keyInfo => $value) : ?>
-                <li class="list-group-item list-group-item-success"><?php echo $keyInfo ?> : <?php echo $value ?></li>
+            <?php foreach ($formInformations as $formDetail) : ?>
+                <li class="list-group-item <?php echo (empty($formDetail->getName())) ? 'list-group-item-danger' : 'list-group-item-success';?>">Name : <?php echo $formDetail->getName()?></li>
+                <li class="list-group-item <?php echo (empty($formDetail->getRace())) ? 'list-group-item-danger' : 'list-group-item-success';?>">Race : <?php echo $formDetail->getRace()?></li>
+                <li class="list-group-item <?php echo (empty($formDetail->getEmail())) ? 'list-group-item-danger' : 'list-group-item-success';?>">Email : <?php echo $formDetail->getEmail()?></li>
+                <li class="list-group-item <?php echo (empty($formDetail->getPassword())) ? 'list-group-item-danger' : 'list-group-item-success';?>">Password : <?php echo $formDetail->getPassword()?></li>
             <?php endforeach; ?>
             </ul>
         </div>
