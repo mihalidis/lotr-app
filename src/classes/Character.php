@@ -1,6 +1,6 @@
 <?php
 
-class character
+class Character
 {
     const CHARACTER_RACE = [
         'Human','Elf','Hobbit','Dwarf','Maiar','Ent','Orcs','Dragon','Great Spiders','Black Uruk','Ainur','God','Men','Half-elven','Goblin','Orc','Balrogs'

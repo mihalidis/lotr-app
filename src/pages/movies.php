@@ -1,6 +1,6 @@
 <?php
 $lotrMovies = include '../configuration/lotrmovieapi.php';
-include '../classes/movie.php';
+include '../classes/Movie.php';
 
 function getTitle() {
     return 'Movies';

@@ -1,6 +1,6 @@
 <?php
 $lotrCharacters = include '../configuration/lotrcharacterapi.php';
-include '../classes/character.php';
+include '../classes/Character.php';
 
 function getTitle() {
     return 'Characters';

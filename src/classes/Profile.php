@@ -1,7 +1,7 @@
 <?php
-include 'character.php';
+include 'Character.php';
 
-class profile extends character
+class Profile extends Character
 {
     private $email;
     private $password;

@@ -1,6 +1,6 @@
 <?php
 $lotrBooks = include '../configuration/lotrbookapi.php';
-include '../classes/book.php';
+include '../classes/Book.php';
 
 function getTitle() {
     return 'Books';

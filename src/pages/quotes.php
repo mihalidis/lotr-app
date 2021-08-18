@@ -1,5 +1,5 @@
 <?php
-include '../classes/quote.php';
+include '../classes/Quote.php';
 
 function getTitle() {
     return 'Quotes';

@@ -1,6 +1,6 @@
 <?php
-include "budgetException.php";
-class movie
+include "BudgetException.php";
+class Movie
 {
     private $name;
     private $budgetInMillions;

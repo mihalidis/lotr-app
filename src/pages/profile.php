@@ -1,5 +1,5 @@
 <?php
-include '../classes/profile.php';
+include '../classes/Profile.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
     die("Form can't submitted");

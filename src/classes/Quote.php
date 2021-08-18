@@ -1,6 +1,6 @@
 <?php
 
-class quote
+class Quote
 {
     private $dialog;
     private $movie;

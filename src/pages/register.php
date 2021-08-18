@@ -4,7 +4,7 @@ function getTitle() {
     return 'Register';
 }
 
-include '../classes/character.php';
+include '../classes/Character.php';
 $races = character::CHARACTER_RACE;
 
 ?>

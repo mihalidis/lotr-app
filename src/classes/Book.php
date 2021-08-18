@@ -1,6 +1,6 @@
 <?php
 
-class book
+class Book
 {
     private $name;
 
