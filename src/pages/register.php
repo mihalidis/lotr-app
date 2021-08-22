@@ -1,11 +1,12 @@
 <?php
+include "../../vendor/autoload.php";
+use LotrApp\Classes\Character;
 
 function getTitle() {
     return 'Register';
 }
 
-include '../classes/Character.php';
-$races = character::CHARACTER_RACE;
+$races = Character::CHARACTER_RACE;
 
 ?>
 

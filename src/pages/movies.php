@@ -1,6 +1,9 @@
 <?php
+
+include "../../vendor/autoload.php";
+use LotrApp\Classes\Movie;
+
 $lotrMovies = include '../configuration/lotrmovieapi.php';
-include '../classes/Movie.php';
 
 function getTitle() {
     return 'Movies';

@@ -1,4 +1,5 @@
 <?php
+namespace LotrApp\Classes;
 
 class Quote
 {

@@ -1,6 +1,13 @@
 <?php
-
 $title = 'Lord Of The Rings';
+
+$userName = null;
+
+if(isset($_SESSION['user'])) {
+    $userName = $_SESSION['user']->getName();
+} else {
+    $userName = null;
+}
 
 ?>
 
@@ -29,7 +36,8 @@ $title = 'Lord Of The Rings';
             </li>
         </ul>
         <div>
-            <a class="btn btn-outline-success my-2 my-sm-0" type="button" href="/src/pages/register.php"> Register </a>
+            <a class="btn btn-outline-success my-2 my-sm-0 <?php if($userName !== null) {echo 'd-none';} else {echo '';} ?>" type="button" href="/src/pages/register.php"> Register </a>
+            <p><?php if($userName !== null) {echo 'Welcome ' . $userName;} else {echo '';} ?></p>
         </div>
     </div>
 </nav>

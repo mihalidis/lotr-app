@@ -1,4 +1,7 @@
 <?php
+
+namespace LotrApp\Classes;
+
 include "BudgetException.php";
 class Movie
 {

@@ -1,6 +1,9 @@
 <?php
+include "../../vendor/autoload.php";
+
+use LotrApp\Classes\Character;
+
 $lotrCharacters = include '../configuration/lotrcharacterapi.php';
-include '../classes/Character.php';
 
 function getTitle() {
     return 'Characters';

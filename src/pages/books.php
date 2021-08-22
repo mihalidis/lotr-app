@@ -1,6 +1,9 @@
 <?php
+include "../../vendor/autoload.php";
+
+use LotrApp\Classes\Book;
+
 $lotrBooks = include '../configuration/lotrbookapi.php';
-include '../classes/Book.php';
 
 function getTitle() {
     return 'Books';

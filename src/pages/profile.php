@@ -1,12 +1,14 @@
 <?php
-include '../classes/Profile.php';
+session_start();
+include "../../vendor/autoload.php";
+use LotrApp\Classes\Profile;
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
     die("Form can't submitted");
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $formInformations = [];
-    $newProfile = new profile();
+    $newProfile = new Profile();
 
     $newProfile->setEmail($_POST['email']);
     $newProfile->setPassword($_POST['password']);
@@ -14,6 +16,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $newProfile->setRace($_POST['race']);
 
     $formInformations[] = $newProfile;
+
+
+    $_SESSION['user'] = $newProfile;
 }
 
 function getTitle() {

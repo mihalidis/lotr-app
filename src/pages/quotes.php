@@ -1,5 +1,7 @@
 <?php
-include '../classes/Quote.php';
+include "../../vendor/autoload.php";
+
+use LotrApp\Classes\Quote;
 
 function getTitle() {
     return 'Quotes';

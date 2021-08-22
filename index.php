@@ -1,5 +1,7 @@
 <?php
 
+include "vendor/autoload.php";
+
 function getTitle() {
     return 'Anasayfa';
 }

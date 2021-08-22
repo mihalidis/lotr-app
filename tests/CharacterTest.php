@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-require 'src/classes/Character.php';
+require 'src/Classes/Character.php';
 
 class CharacterTest extends TestCase
 {

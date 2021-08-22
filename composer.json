@@ -2,9 +2,11 @@
     "name": "pinar/lord-of-the-rings-app",
     "autoload": {
         "psr-4": {
-            "Pinar\\LordOfTheRingsApp\\": "src/"
+            "LotrApp\\": "src/"
         },
-        "classmap": ["src/classes"]
+        "classmap": [
+            "src/Classes"
+        ]
     },
     "authors": [
         {

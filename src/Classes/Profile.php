@@ -1,5 +1,6 @@
 <?php
-include 'Character.php';
+
+namespace LotrApp\Classes;
 
 class Profile extends Character
 {
