@@ -4,7 +4,7 @@ $title = 'Lord Of The Rings';
 $userName = null;
 
 if(isset($_SESSION['user'])) {
-    $userName = $_SESSION['user']->getName();
+    $userName = $_SESSION['userName'];
 } else {
     $userName = null;
 }

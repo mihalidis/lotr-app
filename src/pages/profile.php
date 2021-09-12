@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $formInformations[] = $newProfile;
 
 
-    $_SESSION['user'] = $newProfile;
+    $_SESSION['userName'] = $newProfile->getName();
 }
 
 function getTitle() {
